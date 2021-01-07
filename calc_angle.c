@@ -21,6 +21,7 @@ int main(void) {
 	}
 	else {
 		printf("오류 1 아니면 2 만 입력해주세요.\n");
+		main();
 	}
 
 
@@ -47,7 +48,8 @@ void main_goal() {
 	}
 	printf("한 각의 크기가 %d 인 도형은 %d각형 입니다\n", x, i);
 	printf("아무키나 눌러 종료합니다...");
-
+	
+	a:
 	int input;
 	printf("1번 : 다시 계산하기");
 	printf("2번 : 종료");
@@ -62,6 +64,7 @@ void main_goal() {
 	}
 	else {
 		printf("잘못 입력 하였습니다. 다시 입력 해주세요");
+		goto a;
 	}
 }
 
@@ -73,9 +76,12 @@ void sec_goal() {
 	fflush(stdin);
 
 	temp = (180 * (y - 2)) / y;
+	
 
 	int input;
 	printf("%d각형 한 각의 크기는 %d 입니다.\n\n\n", y, temp);
+	
+	b:
 	printf("1번 : 다시 계산하기");
 	printf("2번 : 종료");
 	scanf_s("%d", &input);
@@ -89,5 +95,6 @@ void sec_goal() {
 	}
 	else {
 		printf("잘못 입력 하였습니다. 다시 입력 해주세요");
+		goto b;
 	}
 }
